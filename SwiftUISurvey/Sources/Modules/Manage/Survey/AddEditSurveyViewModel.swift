@@ -53,7 +53,7 @@ class AddEditSurveyViewModel: ObservableObject, CombineEnabled {
             .filter(\.isCompleted)
             .first()
             .map { _ in false }
-            .sink(self, result: \.isPresenting)
+            .sinkAndAssign(to: self, result: \.isPresenting)
         
     }
     
@@ -77,6 +77,6 @@ class AddEditSurveyViewModel: ObservableObject, CombineEnabled {
             surveyRepository.addSurvey(survey: survey)
         
         action.eraseToVoidPublisher()
-            .sink(self, state: \.sendSurveyState)
+            .sinkAndAssign(to: self, state: \.sendSurveyState)
     }
 }

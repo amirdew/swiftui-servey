@@ -43,7 +43,7 @@ class AddEditQuestionViewModel: ObservableObject, CombineEnabled {
             .filter(\.isCompleted)
             .first()
             .map { _ in false }
-            .sink(self, result: \.isPresenting)
+            .sinkAndAssign(to: self, result: \.isPresenting)
     }
     
     
@@ -56,6 +56,6 @@ class AddEditQuestionViewModel: ObservableObject, CombineEnabled {
             questionRepository.addQuestion(question: question)
         
         action.eraseToVoidPublisher()
-            .sink(self, state: \.sendQuestionState)
+            .sinkAndAssign(to: self, state: \.sendQuestionState)
     }
 }

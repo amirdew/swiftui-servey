@@ -24,7 +24,7 @@ class QuestionListViewModel: ObservableObject, CombineEnabled {
     init(ids: [UUID]?, questionRepository: QuestionRepository = .shared) {
         self.ids = ids
         self.questionRepository = questionRepository
-        questionRepository.$isFetchingList.sink(self, result: \.isRefreshing)
+        questionRepository.$isFetchingList.sinkAndAssign(to: self, result: \.isRefreshing)
         questionRepository.$questions
             .map {
                 if let ids = ids {
@@ -32,7 +32,7 @@ class QuestionListViewModel: ObservableObject, CombineEnabled {
                 }
                 return $0
             }
-            .sink(self, result: \.questions)
+            .sinkAndAssign(to: self, result: \.questions)
     }
     
     

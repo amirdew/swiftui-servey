@@ -102,21 +102,19 @@ class WebAPI {
         //
         
         return performRequest(for: url, method: method, body: body)
-            .tryMap { [weak self] in
-                guard let self = self else {
-                    throw CombineError.released
-                }
+            .map {
                 // logging
                 #if DEBUG
                 print("request response \(method.rawValue) \(url.absoluteString)")
                 print(String(data: $0.data, encoding: .utf8) ?? "empty response body")
                 #endif
-                //
-                if ResponseType.self == Empty.self {
-                    return Empty() as! ResponseType
+
+                if ResponseType.self == Empty.self, $0.data.isEmpty {
+                    return "{}".data(using: .utf8)!
                 }
-                return try self.jsonDecoder.decode(ResponseType.self, from: $0.data)
+                return $0.data
             }
+            .decode(type: ResponseType.self, decoder: jsonDecoder)
             .eraseToAnyPublisher()
     }
     

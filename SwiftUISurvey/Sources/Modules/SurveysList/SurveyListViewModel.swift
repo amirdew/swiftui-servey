@@ -23,8 +23,8 @@ class SurveyListViewModel: ObservableObject, CombineEnabled {
     
     init(surveyRepository: SurveyRepository = .shared) {
         self.surveyRepository = surveyRepository
-        surveyRepository.$isFetchingList.sink(self, result: \.isRefreshing)
-        surveyRepository.$surveys.sink(self, result: \.surveys)
+        surveyRepository.$isFetchingList.sinkAndAssign(to: self, result: \.isRefreshing)
+        surveyRepository.$surveys.sinkAndAssign(to: self, result: \.surveys)
     }
     
     

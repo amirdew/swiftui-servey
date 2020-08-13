@@ -14,8 +14,8 @@ typealias ObjectCombineEnabled = AnyObject & CombineEnabled
 
 extension Publisher {
     
-    func sink<T: ObjectCombineEnabled>(
-        _ object: T,
+    func sinkAndAssign<T: ObjectCombineEnabled>(
+        to object: T,
         completed completedKeyPath: ReferenceWritableKeyPath<T, Bool>? = nil,
         loading loadingKeyPath: ReferenceWritableKeyPath<T, Bool>? = nil,
         error errorKeyPath: ReferenceWritableKeyPath<T, Error?>? = nil,
@@ -51,8 +51,8 @@ extension Publisher {
             .collect(by: object.cancellableBag)
     }
     
-    func sink<T: ObjectCombineEnabled>(
-        _ object: T,
+    func sinkAndAssign<T: ObjectCombineEnabled>(
+        to object: T,
         state keyPath: ReferenceWritableKeyPath<T, PublisherState<Self.Output, Self.Failure>>
     ) {
         DispatchQueue.main.async {
@@ -90,7 +90,7 @@ extension Publisher {
 
 
 extension Publisher {
-    func store<T: ObjectCombineEnabled>(
+    func handleAndAssign<T: ObjectCombineEnabled>(
         to object: T,
         loading loadingKeyPath: ReferenceWritableKeyPath<T, Bool>? = nil,
         completed completedKeyPath: ReferenceWritableKeyPath<T, Bool>? = nil,

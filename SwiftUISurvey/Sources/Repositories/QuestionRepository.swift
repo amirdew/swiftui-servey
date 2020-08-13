@@ -40,7 +40,7 @@ class QuestionRepository: CombineEnabled {
         guard !isFetchingList else { return }
         webAPI
             .getQuestions()
-            .sink(self, loading: \.isFetchingList, result: \.questions)
+            .sinkAndAssign(to: self, loading: \.isFetchingList, result: \.questions)
         //TODO: add try on error
     }
     

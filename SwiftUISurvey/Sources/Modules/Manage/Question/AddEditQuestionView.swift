@@ -32,23 +32,17 @@ struct AddEditQuestionView: View {
             }
             
             Section {
-                saveButtonView
+                ActionButton(title: "Save",
+                             action: viewModel.save,
+                             isBusy: viewModel.sendQuestionState.isInProgress,
+                             isDisabled: !viewModel.canBeSaved)
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .disabled(!viewModel.canBeSaved)
             }
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .navigationBarTitle(viewModel.isEditing ? "Edit Question" : "Add Question", displayMode: .inline)
         .showErrors(state: $viewModel.sendQuestionState)
-    }
-    
-    @ViewBuilder private var saveButtonView: some View {
-        if viewModel.sendQuestionState.isInProgress {
-            ProgressView()
-        } else {
-            Button("Save", action: viewModel.save)
-        }
     }
     
 }

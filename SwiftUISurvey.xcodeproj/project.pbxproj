@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292A999524E56D8300E6A91C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292A999424E56D8300E6A91C /* Button.swift */; };
 		293001FF24D88A9B002DA5A0 /* AddEditSurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293001FE24D88A9B002DA5A0 /* AddEditSurveyViewModel.swift */; };
 		2930020224D88BB1002DA5A0 /* AddEditQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2930020124D88BB1002DA5A0 /* AddEditQuestionViewModel.swift */; };
 		293A0A6C24E00BCF008D0001 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A0A6B24E00BCF008D0001 /* PullToRefresh.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292A999424E56D8300E6A91C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		293001FE24D88A9B002DA5A0 /* AddEditSurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditSurveyViewModel.swift; sourceTree = "<group>"; };
 		2930020124D88BB1002DA5A0 /* AddEditQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditQuestionViewModel.swift; sourceTree = "<group>"; };
 		293A0A6B24E00BCF008D0001 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				297C8C2F24DEE0E5009910C9 /* AnyCancellable+CancellableBag.swift */,
 				297C8C3124DEE69E009910C9 /* PublisherResult.swift */,
 				293A0A6D24E04026008D0001 /* PublisherState+ErrorAlert.swift */,
+				292A999424E56D8300E6A91C /* Button.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				29A2A81224D5BA4C00A4E5AD /* TabbarName.swift in Sources */,
 				29A2A82624D745C500A4E5AD /* Question.swift in Sources */,
 				29A2A82424D7443A00A4E5AD /* WebAPI.Empty.swift in Sources */,
+				292A999524E56D8300E6A91C /* Button.swift in Sources */,
 				29D80CC7248D224C0086C314 /* ManageSurveyView.swift in Sources */,
 				29A2A80D24D5B8D000A4E5AD /* SurveyAppModel.swift in Sources */,
 				293A0A6C24E00BCF008D0001 /* PullToRefresh.swift in Sources */,

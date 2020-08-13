@@ -40,7 +40,7 @@ class SurveyRepository: CombineEnabled {
         guard !isFetchingList else { return }
         webAPI
             .getSurveys()
-            .sink(self, loading: \.isFetchingList, result: \.surveys)
+            .sinkAndAssign(to: self, loading: \.isFetchingList, result: \.surveys)
         //TODO: add try on error
     }
     

@@ -50,23 +50,17 @@ struct AddEditSurveyView: View {
             }
             
             Section {
-                saveButtonView
+                ActionButton(title: "Save",
+                             action: viewModel.save,
+                             isBusy: viewModel.sendSurveyState.isInProgress,
+                             isDisabled: !viewModel.canBeSaved)
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .disabled(!viewModel.canBeSaved)
             }
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .navigationBarTitle(viewModel.isEditing ? "Edit Survey" : "Add Survey", displayMode: .inline)
         .showErrors(state: $viewModel.sendSurveyState)
-    }
-    
-    @ViewBuilder private var saveButtonView: some View {
-        if viewModel.sendSurveyState.isInProgress {
-            ProgressView()
-        } else {
-            Button("Save", action: viewModel.save)
-        }
     }
     
 }
