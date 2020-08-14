@@ -15,15 +15,6 @@ public class CancellableBag {
     private var cancellableSet: Set<AnyCancellable> = Set()
     
     
-    // MARK: Lifecycle
-    
-    deinit {
-        cancellableSet.forEach {
-            $0.cancel()
-        }
-    }
-    
-    
     // MARK: Public functions
     
     func collect(_ cancellable: AnyCancellable) {
