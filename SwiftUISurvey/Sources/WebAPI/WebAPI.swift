@@ -54,7 +54,7 @@ class WebAPI {
     // MARK: Constants
     
     enum Constants {
-        static let baseURL = URL(string: "http://localhost:8080/mobile")!
+        static let baseURL = URL(string: "https://swiftysurvey.herokuapp.com/mobile")!
     }
     
     
