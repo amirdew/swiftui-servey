@@ -10,25 +10,22 @@ import SwiftUI
 
 struct QuestionListView: View {
     
-    let onQuestionSelected: ((Question) -> Void)?
+    @Binding var selectedQuestion: Question?
     @StateObject var viewModel: QuestionListViewModel
 
-    init(onQuestionSelected: ((Question) -> Void)?, ids: [UUID]? = nil) {
-        self.onQuestionSelected = onQuestionSelected
+    init(selectedQuestion: Binding<Question?>? = nil, ids: [UUID]? = nil) {
+        _selectedQuestion = selectedQuestion ?? .fake(nil)
         _viewModel = StateObject(wrappedValue: QuestionListViewModel(ids: ids))
     }
     
     var body: some View {
         List(viewModel.questions) { question in
             QuestionRowView(question: question) {
-                DispatchQueue.main.async {
-                    onQuestionSelected?(question)
-                }
+                selectedQuestion = question
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .pullToRefresh(isRefreshing: viewModel.isRefreshing,
-                       onRefresh: viewModel.refresh)
+        .onAppear(perform: viewModel.refresh)
     }
 }
 

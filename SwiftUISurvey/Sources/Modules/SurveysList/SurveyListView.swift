@@ -10,20 +10,22 @@ import SwiftUI
 
 struct SurveyListView: View {
     
-    let onSurveySelected: ((Survey) -> Void)?
-    @StateObject var viewModel = SurveyListViewModel()
+    @Binding var selectedSurvey: Survey?
+    @StateObject var viewModel: SurveyListViewModel
+    
+    init(selectedSurvey: Binding<Survey?>? = nil) {
+        _selectedSurvey = selectedSurvey ?? .fake(nil)
+        _viewModel = StateObject(wrappedValue: SurveyListViewModel())
+    }
     
     var body: some View {
         List(viewModel.surveys) { survey in
             SurveyRowView(survey: survey) {
-                DispatchQueue.main.async {
-                    onSurveySelected?(survey)
-                }
+                selectedSurvey = survey
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .pullToRefresh(isRefreshing: viewModel.isRefreshing,
-                       onRefresh: viewModel.refresh)
+        .onAppear(perform: viewModel.refresh)
     }
 }
 

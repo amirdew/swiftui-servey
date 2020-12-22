@@ -19,6 +19,13 @@ class AddEditSurveyViewModel: ObservableObject, CombineEnabled {
     @Published var sendSurveyState: PublisherState<Void, Error> = .idle
     @Published var isEditing: Bool = false
     @Published var survey: Survey
+    @Published var selectedQuestion: Question? = nil {
+        didSet {
+            isSelectingQuestion = false
+            guard let question = selectedQuestion, !survey.questionIds.contains(question.id) else { return }
+            survey.questionIds.append(question.id)
+        }
+    }
     
     let cancellableBag = CancellableBag()
     
@@ -59,12 +66,6 @@ class AddEditSurveyViewModel: ObservableObject, CombineEnabled {
     
     
     // MARK: Public functions
-    
-    func addQuestion(_ question: Question) {
-        isSelectingQuestion = false
-        guard !survey.questionIds.contains(question.id) else { return }
-        survey.questionIds.append(question.id)
-    }
     
     func deleteQuestion(at offsets: IndexSet) {
         survey.questionIds.remove(atOffsets: offsets)

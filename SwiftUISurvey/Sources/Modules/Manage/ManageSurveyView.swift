@@ -15,15 +15,16 @@ struct ManageSurveyView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                NavigationLink(destination: addEditView,
-                               isActive: $viewModel.isAddingOrEditing) {}
+                NavigationLink(destination: AddEditSurveyView(isPresenting: $viewModel.isPresentingSurveyView,
+                                                              survey: viewModel.editingSurvey),
+                               isActive: $viewModel.isPresentingSurveyView) {}
+                NavigationLink(destination: AddEditQuestionView(isPresenting: $viewModel.isPresentingQuestionView,
+                                                                question: viewModel.editingQuestion),
+                               isActive: $viewModel.isPresentingQuestionView) {}
                 listView
                     .navigationBarItems(
                         leading: modePickerView,
-                        trailing: Button(action: new) {
-                            Image(systemName: "plus.circle.fill")
-                                .font(.system(size: 28, weight: .regular))
-                        }
+                        trailing: addButton
                     )
             }
         }
@@ -38,32 +39,29 @@ struct ManageSurveyView: View {
         .pickerStyle(SegmentedPickerStyle())
     }
     
-    @ViewBuilder private var addEditView: some View {
-        switch viewModel.mode {
-        case .surveys: AddEditSurveyView(isPresenting: $viewModel.isAddingOrEditing,
-                                         survey: viewModel.editingSurvey)
-        case .questions: AddEditQuestionView(isPresenting: $viewModel.isAddingOrEditing,
-                                             question: viewModel.editingQuestion)
+    @ViewBuilder private var addButton: some View {
+        Button(action: new) {
+            Image(systemName: "plus.circle.fill")
+                .font(.system(size: 28, weight: .regular))
         }
     }
     
     @ViewBuilder private var listView: some View {
         switch viewModel.mode {
-        case .surveys: SurveyListView(onSurveySelected: {
-            viewModel.editingSurvey = $0
-            viewModel.isAddingOrEditing = true
-        })
-        case .questions: QuestionListView(onQuestionSelected: {
-            viewModel.editingQuestion = $0
-            viewModel.isAddingOrEditing = true
-        })
+        case .surveys: SurveyListView(selectedSurvey: $viewModel.editingSurvey)
+        case .questions: QuestionListView(selectedQuestion: $viewModel.editingQuestion)
         }
     }
     
     private func new() {
         viewModel.editingQuestion = nil
         viewModel.editingSurvey = nil
-        viewModel.isAddingOrEditing = true
+        switch viewModel.mode {
+        case .surveys:
+            viewModel.isPresentingSurveyView = true
+        case .questions:
+            viewModel.isPresentingQuestionView = true
+        }
     }
 }
 

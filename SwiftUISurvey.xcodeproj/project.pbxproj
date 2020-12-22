@@ -10,7 +10,6 @@
 		292A999524E56D8300E6A91C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292A999424E56D8300E6A91C /* Button.swift */; };
 		293001FF24D88A9B002DA5A0 /* AddEditSurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293001FE24D88A9B002DA5A0 /* AddEditSurveyViewModel.swift */; };
 		2930020224D88BB1002DA5A0 /* AddEditQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2930020124D88BB1002DA5A0 /* AddEditQuestionViewModel.swift */; };
-		293A0A6C24E00BCF008D0001 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A0A6B24E00BCF008D0001 /* PullToRefresh.swift */; };
 		293A0A6E24E04026008D0001 /* PublisherState+ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A0A6D24E04026008D0001 /* PublisherState+ErrorAlert.swift */; };
 		297C8C2A24DEB349009910C9 /* Combine+VoidPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C8C2924DEB349009910C9 /* Combine+VoidPublisher.swift */; };
 		297C8C2C24DEC7C6009910C9 /* Publisher+CombineEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C8C2B24DEC7C6009910C9 /* Publisher+CombineEnabled.swift */; };
@@ -19,7 +18,6 @@
 		297C8C3224DEE69E009910C9 /* PublisherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C8C3124DEE69E009910C9 /* PublisherResult.swift */; };
 		297C8C3424DF03A8009910C9 /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C8C3324DF03A8009910C9 /* SurveyListViewModel.swift */; };
 		297C8C3624DF04A9009910C9 /* QuestionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C8C3524DF04A9009910C9 /* QuestionListViewModel.swift */; };
-		297C8C3A24DF1BF3009910C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297C8C3924DF1BF3009910C9 /* ContentView.swift */; };
 		29A2A80D24D5B8D000A4E5AD /* SurveyAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A80C24D5B8D000A4E5AD /* SurveyAppModel.swift */; };
 		29A2A81224D5BA4C00A4E5AD /* TabbarName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A81124D5BA4C00A4E5AD /* TabbarName.swift */; };
 		29A2A81524D5BFAF00A4E5AD /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A81424D5BFAF00A4E5AD /* WebAPI.swift */; };
@@ -35,6 +33,7 @@
 		29A2A82D24D74BBD00A4E5AD /* SurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A82C24D74BBD00A4E5AD /* SurveyRepository.swift */; };
 		29A2A82F24D74BCE00A4E5AD /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A82E24D74BCE00A4E5AD /* QuestionRepository.swift */; };
 		29A2A83124D7548A00A4E5AD /* ManageListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A2A83024D7548A00A4E5AD /* ManageListMode.swift */; };
+		29A784C825921F4F00E99500 /* Binding+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A784C725921F4F00E99500 /* Binding+Utilities.swift */; };
 		29B8A7C024D862F90034F21C /* AddEditSurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8A7BF24D862F90034F21C /* AddEditSurveyView.swift */; };
 		29B8A7C224D86BD30034F21C /* AddEditQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8A7C124D86BD30034F21C /* AddEditQuestionView.swift */; };
 		29B8A7C524D86BF80034F21C /* QuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8A7C424D86BF80034F21C /* QuestionListView.swift */; };
@@ -52,7 +51,6 @@
 		292A999424E56D8300E6A91C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		293001FE24D88A9B002DA5A0 /* AddEditSurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditSurveyViewModel.swift; sourceTree = "<group>"; };
 		2930020124D88BB1002DA5A0 /* AddEditQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditQuestionViewModel.swift; sourceTree = "<group>"; };
-		293A0A6B24E00BCF008D0001 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		293A0A6D24E04026008D0001 /* PublisherState+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublisherState+ErrorAlert.swift"; sourceTree = "<group>"; };
 		297C8C2924DEB349009910C9 /* Combine+VoidPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+VoidPublisher.swift"; sourceTree = "<group>"; };
 		297C8C2B24DEC7C6009910C9 /* Publisher+CombineEnabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+CombineEnabled.swift"; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 		297C8C3124DEE69E009910C9 /* PublisherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherResult.swift; sourceTree = "<group>"; };
 		297C8C3324DF03A8009910C9 /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
 		297C8C3524DF04A9009910C9 /* QuestionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewModel.swift; sourceTree = "<group>"; };
-		297C8C3924DF1BF3009910C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		29A2A80C24D5B8D000A4E5AD /* SurveyAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAppModel.swift; sourceTree = "<group>"; };
 		29A2A81124D5BA4C00A4E5AD /* TabbarName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarName.swift; sourceTree = "<group>"; };
 		29A2A81424D5BFAF00A4E5AD /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
@@ -77,6 +74,7 @@
 		29A2A82C24D74BBD00A4E5AD /* SurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepository.swift; sourceTree = "<group>"; };
 		29A2A82E24D74BCE00A4E5AD /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
 		29A2A83024D7548A00A4E5AD /* ManageListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageListMode.swift; sourceTree = "<group>"; };
+		29A784C725921F4F00E99500 /* Binding+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Utilities.swift"; sourceTree = "<group>"; };
 		29B8A7BF24D862F90034F21C /* AddEditSurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditSurveyView.swift; sourceTree = "<group>"; };
 		29B8A7C124D86BD30034F21C /* AddEditQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditQuestionView.swift; sourceTree = "<group>"; };
 		29B8A7C424D86BF80034F21C /* QuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListView.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 		29A2A81C24D72B0100A4E5AD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				293A0A6B24E00BCF008D0001 /* PullToRefresh.swift */,
 				297C8C2924DEB349009910C9 /* Combine+VoidPublisher.swift */,
 				29A2A81D24D72B3100A4E5AD /* Combine+Error.swift */,
 				29D8993824DEAE6A009F9537 /* CombineEnabled.swift */,
@@ -168,6 +165,7 @@
 				297C8C3124DEE69E009910C9 /* PublisherResult.swift */,
 				293A0A6D24E04026008D0001 /* PublisherState+ErrorAlert.swift */,
 				292A999424E56D8300E6A91C /* Button.swift */,
+				29A784C725921F4F00E99500 /* Binding+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -211,7 +209,6 @@
 			children = (
 				29D80CBB248CF7450086C314 /* Sources */,
 				29D80CBC248CF7620086C314 /* Resources */,
-				297C8C3924DF1BF3009910C9 /* ContentView.swift */,
 			);
 			path = SwiftUISurvey;
 			sourceTree = "<group>";
@@ -365,7 +362,6 @@
 				292A999524E56D8300E6A91C /* Button.swift in Sources */,
 				29D80CC7248D224C0086C314 /* ManageSurveyView.swift in Sources */,
 				29A2A80D24D5B8D000A4E5AD /* SurveyAppModel.swift in Sources */,
-				293A0A6C24E00BCF008D0001 /* PullToRefresh.swift in Sources */,
 				29D8993724DD965E009F9537 /* ManageSurveyViewModel.swift in Sources */,
 				29A2A82F24D74BCE00A4E5AD /* QuestionRepository.swift in Sources */,
 				297C8C3424DF03A8009910C9 /* SurveyListViewModel.swift in Sources */,
@@ -373,7 +369,6 @@
 				29D8993924DEAE6A009F9537 /* CombineEnabled.swift in Sources */,
 				29C14020248CD914001985DD /* SurveyApp.swift in Sources */,
 				29A2A82A24D7460600A4E5AD /* QuestionAnswerChoice.swift in Sources */,
-				297C8C3A24DF1BF3009910C9 /* ContentView.swift in Sources */,
 				29A2A83124D7548A00A4E5AD /* ManageListMode.swift in Sources */,
 				29A2A82D24D74BBD00A4E5AD /* SurveyRepository.swift in Sources */,
 				297C8C3624DF04A9009910C9 /* QuestionListViewModel.swift in Sources */,
@@ -384,6 +379,7 @@
 				293A0A6E24E04026008D0001 /* PublisherState+ErrorAlert.swift in Sources */,
 				29B8A7C524D86BF80034F21C /* QuestionListView.swift in Sources */,
 				297C8C2A24DEB349009910C9 /* Combine+VoidPublisher.swift in Sources */,
+				29A784C825921F4F00E99500 /* Binding+Utilities.swift in Sources */,
 				297C8C2C24DEC7C6009910C9 /* Publisher+CombineEnabled.swift in Sources */,
 				29A2A82224D742FC00A4E5AD /* Survey.swift in Sources */,
 				29B8A7C224D86BD30034F21C /* AddEditQuestionView.swift in Sources */,

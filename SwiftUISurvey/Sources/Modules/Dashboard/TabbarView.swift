@@ -35,25 +35,25 @@ struct TabbarView: View {
 
 struct SurveyForAnswerListView: View {
     
-    @State private var selectedSurvey: Survey? = nil
+    @State private var selectedSurvey: Survey? = nil {
+        didSet {
+            isShowingQuestions = selectedSurvey != nil
+        }
+    }
     @State private var isShowingQuestions: Bool = false
     
     var body: some View {
         NavigationView {
             ZStack {
                 NavigationLink(destination: questionListView,  isActive: $isShowingQuestions) {}
-                SurveyListView(onSurveySelected: {
-                    selectedSurvey = $0
-                    isShowingQuestions = true
-                })
-                .navigationBarTitle("Answer a survey", displayMode: .inline)
+                SurveyListView(selectedSurvey: $selectedSurvey)
+                    .navigationBarTitle("Answer a survey", displayMode: .inline)
             }
         }
     }
     
     private var questionListView: some View {
-        QuestionListView(onQuestionSelected: { _ in },
-                         ids: selectedSurvey?.questionIds)
+        QuestionListView(ids: selectedSurvey?.questionIds)
             .navigationBarTitle("pick a question", displayMode: .inline)
     }
 }

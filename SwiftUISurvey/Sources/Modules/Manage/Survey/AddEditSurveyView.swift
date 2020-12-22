@@ -29,7 +29,7 @@ struct AddEditSurveyView: View {
                 Text("Questions")
                     .foregroundColor(.gray)
                 Spacer()
-                NavigationLink(destination: QuestionListView(onQuestionSelected: viewModel.addQuestion),
+                NavigationLink(destination: QuestionListView(selectedQuestion: $viewModel.selectedQuestion),
                                isActive: $viewModel.isSelectingQuestion) {
                     Image(systemName: "plus.circle.fill")
                         .font(.system(size: 20))

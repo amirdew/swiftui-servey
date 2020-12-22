@@ -13,7 +13,16 @@ class ManageSurveyViewModel: ObservableObject {
     // MARK: Properties
     
     @Published var mode: ManageListMode = .surveys
-    @Published var editingSurvey: Survey? = nil
-    @Published var editingQuestion: Question? = nil
-    @Published var isAddingOrEditing: Bool = false
+    @Published var editingSurvey: Survey? = nil {
+        didSet {
+            isPresentingSurveyView = editingSurvey != nil
+        }
+    }
+    @Published var editingQuestion: Question? = nil {
+        didSet {
+            isPresentingQuestionView = editingQuestion != nil
+        }
+    }
+    @Published var isPresentingQuestionView: Bool = false
+    @Published var isPresentingSurveyView: Bool = false
 }
