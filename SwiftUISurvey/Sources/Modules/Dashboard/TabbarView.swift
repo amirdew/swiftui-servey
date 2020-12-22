@@ -50,6 +50,7 @@ struct SurveyForAnswerListView: View {
                     .navigationBarTitle("Answer a survey", displayMode: .inline)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private var questionListView: some View {

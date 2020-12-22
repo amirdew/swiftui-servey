@@ -28,6 +28,7 @@ struct ManageSurveyView: View {
                     )
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private var modePickerView: some View {
